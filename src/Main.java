@@ -1,7 +1,7 @@
 import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         System.out.println("Welcome to our Listener Example");
         System.out.println("Enter \"Quit\" to exit the program.");
         System.out.println("Start typing away!");
