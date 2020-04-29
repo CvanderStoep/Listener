@@ -12,8 +12,8 @@ public class TextProducer {
     public void addListener(TextListener tl){
         textListeners.add(tl);
     }
-    public void removeListener(TextListener tl){
-        textListeners.remove(tl);
+    public boolean removeListener(TextListener tl){
+        return textListeners.remove(tl);
     }
 
     public void startProducing() {
