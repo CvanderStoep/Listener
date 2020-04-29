@@ -5,11 +5,11 @@ public class Main {
         System.out.println("Start typing away!");
 
         TextProducer textproducer = new TextProducer();
-        TextListener listener1 = new ScreenWriter();
-        TextListener listener2 = new DiscFileWriter();
 
-        textproducer.addListener(listener1);
-        textproducer.addListener(listener2);
+        TextListener logListener = new DiscFileWriter("C:\\Users\\lexva\\Desktop\\ListenerLog.txt");
+
+        textproducer.addListener(s -> System.out.println("You typed: " + s));
+        textproducer.addListener(logListener);
 
         textproducer.startProducing();
 

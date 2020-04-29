@@ -1,24 +1,32 @@
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.nio.file.StandardOpenOption;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class DiscFileWriter implements TextListener{
+    private static final Logger LOGGER = Logger.getLogger(DiscFileWriter.class.getName());
+    private File file;
 
+    public DiscFileWriter(String logFile) {
+        file = new File(logFile);
+
+        try {
+            if (file.createNewFile()){
+                LOGGER.log(Level.INFO, "A new file has been created: " + logFile);
+            }
+        } catch (IOException e) {
+            LOGGER.log(Level.SEVERE, "An error occurred while creating a new file.", e);
+        }
+    }
 
     @Override
     public void actionPerformed(String s)  {
-        try {
-            File file = new File("C:\\tmp\\file.txt");
-            file.createNewFile();
-
-            FileWriter writeFile = new FileWriter(file,true);
-            writeFile.write(s+ "\n");
-            writeFile.flush();
-            writeFile.close();
+        try (FileWriter writer = new FileWriter(file,true)){
+            writer.write(s+ "\n");
+            writer.flush();
         } catch (IOException e) {
-            System.out.println("The DiscFileWriter failed to write. Here is what happened: " + e.getMessage());
-        } //TODO implement finally statement
+            LOGGER.log(Level.SEVERE, "An error occurred while trying to write to the file: " + file.getAbsolutePath(), e);
+        }
     }
 }
