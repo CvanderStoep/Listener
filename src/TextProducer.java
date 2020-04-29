@@ -7,10 +7,13 @@ import java.util.Scanner;
  * This class represents the producer.
  */
 public class TextProducer {
-    List<TextListener> textListeners = new ArrayList<TextListener>();
+    private List<TextListener> textListeners = new ArrayList<TextListener>();
 
     public void addListener(TextListener tl){
         textListeners.add(tl);
+    }
+    public void removeListener(TextListener tl){
+        textListeners.remove(tl);
     }
 
     // TODO: add functionality for multiple listeners to tune in.
