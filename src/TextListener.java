@@ -1,3 +1,3 @@
 public interface TextListener {
-    public void actionPerformed (String s);
+    void actionPerformed(String s);
 }

@@ -7,7 +7,7 @@ import java.util.Scanner;
  * This class represents the producer.
  */
 public class TextProducer {
-    private List<TextListener> textListeners = new ArrayList<TextListener>();
+    private List<TextListener> textListeners = new ArrayList<>();
 
     public void addListener(TextListener tl){
         textListeners.add(tl);
