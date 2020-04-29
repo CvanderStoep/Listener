@@ -16,9 +16,6 @@ public class TextProducer {
         textListeners.remove(tl);
     }
 
-    // TODO: add functionality for multiple listeners to tune in.
-    // DONE, see above?
-
     public void startProducing() {
 
         Scanner input = new Scanner(System.in);
