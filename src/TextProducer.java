@@ -5,6 +5,8 @@ import java.util.Scanner;
 /**
  * This will create an example of a producer/listener mechanism.
  * This class represents the producer.
+ * method addlistener to subscribe a listener to this producer
+ * method removelistener to remove a listener from this producer
  */
 public class TextProducer {
     private List<TextListener> textListeners = new ArrayList<>();

@@ -6,7 +6,7 @@ public class Main {
 
         TextProducer textproducer = new TextProducer();
 
-        TextListener logListener = new DiscFileWriter("C:\\Users\\lexva\\Desktop\\ListenerLog.txt");
+        TextListener logListener = new DiscFileWriter("C:\\tmp\\ListenerLog.txt");
 
         textproducer.addListener(s -> System.out.println("You typed: " + s));
         textproducer.addListener(logListener);
