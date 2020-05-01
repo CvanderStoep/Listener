@@ -8,7 +8,7 @@ public class GUI implements TextListener{
     private JTextField numTextLines;
     private JLabel infoLabel;
     private JLabel infoLabelLastTextLine;
-    private Integer numLines;
+    private int numLines;
 
     public GUI() {
         initialiseComponents();
