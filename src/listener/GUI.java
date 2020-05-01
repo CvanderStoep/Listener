@@ -29,9 +29,9 @@ public class GUI implements TextListener{
 
         frame.setVisible(true);
     }
-    public static void main(String[] args){
-        GUI gui = new GUI();
-    }
+//    public static void main(String[] args){
+//        GUI gui = new GUI();
+//    }
 
     @Override
     public void textUpdate(String s) {
