@@ -1,10 +1,12 @@
+package listener;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class DiscFileWriter implements TextListener{
+public class DiscFileWriter implements TextListener {
     private static final Logger LOGGER = Logger.getLogger(DiscFileWriter.class.getName());
     private File file;
 
@@ -21,7 +23,7 @@ public class DiscFileWriter implements TextListener{
     }
 
     @Override
-    public void actionPerformed(String s)  {
+    public void textUpdate(String s)  {
         try (FileWriter writer = new FileWriter(file,true)){
             writer.write(s+ "\n");
             writer.flush();

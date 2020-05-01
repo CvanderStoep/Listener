@@ -1,3 +1,5 @@
+package listener;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -25,7 +27,7 @@ public class TextProducer {
             String s = input.nextLine();
 
             for (TextListener tl: textListeners){
-                tl.actionPerformed(s);
+                tl.textUpdate(s);
             }
 
             if (s.equals("Quit")) {

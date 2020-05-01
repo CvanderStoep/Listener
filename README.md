@@ -1,5 +1,5 @@
-# Listener
-This is an implementation of a Java Listener Design Pattern. It shows the mechanism with one producer and two listeners. 
+# listener
+This is an implementation of a Java listener Design Pattern. It shows the mechanism with one producer and two listeners. 
 An generic listener interface is defined to be be able to handle different kind of listeners.
 
 **Producer**

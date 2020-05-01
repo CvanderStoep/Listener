@@ -1,3 +1,5 @@
+package listener;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to our Listener Example");
@@ -7,9 +9,11 @@ public class Main {
         TextProducer textproducer = new TextProducer();
 
         TextListener logListener = new DiscFileWriter("C:\\tmp\\ListenerLog.txt");
+        TextListener guiListener = new GUI();
 
         textproducer.addListener(s -> System.out.println("You typed: " + s));
         textproducer.addListener(logListener);
+        textproducer.addListener(guiListener);
 
         textproducer.startProducing();
 
