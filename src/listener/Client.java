@@ -13,6 +13,13 @@ import java.util.Scanner;
  */
 
 public class Client {
+
+    public static void main(String[] args) throws IOException {
+        Client client = new Client();
+        int port = 2020;
+        client.create(port);
+    }
+
     public void create(int port) throws IOException {
         System.out.println("Client started.");
         Socket socket = new Socket("localhost", port);
@@ -37,11 +44,6 @@ public class Client {
 
     }
 
-    public static void main(String[] args) throws IOException {
-        Client client = new Client();
-        int port = 2020;
-        client.create(port);
-    }
 
 
 }

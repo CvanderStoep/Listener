@@ -30,6 +30,9 @@ public class Server {
             String string = bufferedReader.readLine();
             System.out.println("Information received by server: " + string);
             System.out.flush();
+            if (string.equals("Quit")) {
+                socket.close();
+                break;}
         }
 //        PrintWriter printWriter = new PrintWriter(socket.getOutputStream());
 //        printWriter.println("Information send by server: Yes, I am ready to receive information!");

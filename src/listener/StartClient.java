@@ -14,8 +14,18 @@ public class StartClient {
         Client client = new Client();
 
         int port = 2020;
-        //TODO create server and then client, at this moment the server is started and code is waiting for the client
-        server.create(port);
+
+        Thread serverthread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    server.create(port);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }            }
+        });
+
+        serverthread.start();
         client.create(port);
 
     }
