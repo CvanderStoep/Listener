@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.Scanner;
 
 /**
  * This class sends text to a local network port.
@@ -15,9 +16,18 @@ public class Client {
     public void create(int port) throws IOException {
         System.out.println("Client started.");
         Socket socket = new Socket("localhost", port);
+
         PrintWriter printWriter = new PrintWriter(socket.getOutputStream());
-        printWriter.println("Information send by Client: Hello is anybody listening?");
-        printWriter.flush();
+        Scanner input = new Scanner(System.in);
+        while (input.hasNext()) {
+            String string = input.nextLine();
+            printWriter.println(string);
+            printWriter.flush();
+            if (string.equals("Quit")) break;
+        }
+
+//        printWriter.println("Information send by Client: Hello is anybody listening?");
+//        printWriter.flush();
 
         InputStreamReader inputStreamReader = new InputStreamReader(socket.getInputStream());
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
@@ -32,5 +42,6 @@ public class Client {
         int port = 2020;
         client.create(port);
     }
+
 
 }
