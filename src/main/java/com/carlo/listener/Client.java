@@ -16,13 +16,15 @@ public class Client {
 
     public static void main(String[] args) throws IOException {
         Client client = new Client();
+        String host = "localhost";
+        String lex = "192.168.68.106";
         int port = 2020;
-        client.create(port);
+        client.create(host, port);
     }
 
-    public void create(int port) throws IOException {
+    public void create(String host, int port) throws IOException {
         System.out.println("Client started.");
-        Socket socket = new Socket("localhost", port);
+        Socket socket = new Socket(host, port);
 
         PrintWriter printWriter = new PrintWriter(socket.getOutputStream());
         Scanner input = new Scanner(System.in);

@@ -15,6 +15,7 @@ public class StartClient {
         Server server = new Server();
         Client client = new Client();
 
+        String host = "localhost";
         int port = 2020;
 
         Thread serverthread = new Thread(new Runnable() {
@@ -28,12 +29,7 @@ public class StartClient {
         });
 
         serverthread.start();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        client.create(port);
+        client.create(host,port);
 
     }
 
