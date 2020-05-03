@@ -28,6 +28,11 @@ public class StartClient {
         });
 
         serverthread.start();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         client.create(port);
 
     }
