@@ -3,8 +3,10 @@ package listener;
 import java.io.IOException;
 
 /**
- * Trying to start server first and then client, but no successful so far?
- * multithreading?
+ * This is the starter code for Client-Server interface using multithreading in one output console.
+ * Alternatively:
+ * You can also start Server manually first and than start Client Manually afterwards.
+ * This will create to output consoles.
  */
 
 public class StartClient {
