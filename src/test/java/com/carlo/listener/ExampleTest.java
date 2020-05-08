@@ -12,9 +12,4 @@ public class ExampleTest {
     public void happyTest() {
         assertTrue(true);
     }
-
-    @Test
-    public void evilTest() {
-        assertTrue(false);
-    }
 }
