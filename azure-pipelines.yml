@@ -17,3 +17,9 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+
+- script: |
+    echo Test test
+    echo Test another test
+    ping 8.8.8.8
+  displayName: 'Ping test'
